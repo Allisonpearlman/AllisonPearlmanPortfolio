@@ -20,16 +20,23 @@
         <span></span><span></span>
       </button>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#gca">GCA</a></li>
+        <li><a href="#gca">Work</a></li>
         <li><a href="#wantlocker">WantLocker</a></li>
-        <li><a href="#campus-closet">Campus Closet</a></li>
-        <li><a href="#vs-wear-test">VS Wear Test</a></li>
+        <li><a href="#campus-closet">Closet</a></li>
+        <li><a href="#vs-wear-test">VS</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
+
+  <!-- Persistent project index (desktop) -->
+  <aside class="project-index" aria-label="Project index">
+    <a class="pi-item" href="#gca" data-section="gca"><span class="pi-num">01</span><span class="pi-label">GCA</span></a>
+    <a class="pi-item" href="#wantlocker" data-section="wantlocker"><span class="pi-num">02</span><span class="pi-label">WantLocker</span></a>
+    <a class="pi-item" href="#campus-closet" data-section="campus-closet"><span class="pi-num">03</span><span class="pi-label">Closet</span></a>
+    <a class="pi-item" href="#vs-wear-test" data-section="vs-wear-test"><span class="pi-num">04</span><span class="pi-label">VS</span></a>
+    <a class="pi-item" href="#about" data-section="about"><span class="pi-num">05</span><span class="pi-label">About</span></a>
+  </aside>
 
   <main>
     <!-- HERO -->
@@ -53,147 +60,128 @@
             src="assets/images/headshot.jpg"
             alt="Portrait of Allison Pearlman"
             width="900"
-            height="1125"
+            height="1184"
             fetchpriority="high"
           />
         </figure>
       </div>
     </section>
 
-    <!-- GCA / NÖZ + charity: water -->
+    <!-- GCA: Nöz + charity: water side by side -->
     <section class="section project" id="gca">
       <div class="section-inner">
-        <header class="section-header">
-          <p class="eyebrow">01 · Global Career Accelerator</p>
-          <h2 class="section-title">Nöz</h2>
-          <p class="section-kicker">Digital brand experience · Positioning, site structure &amp; scroll journey</p>
+        <header class="section-header compact">
+          <div class="section-mark" aria-hidden="true">01</div>
+          <div class="section-heading">
+            <p class="eyebrow">Global Career Accelerator</p>
+            <h2 class="section-title">GCA</h2>
+            <p class="section-kicker">Digital brand experience · May–Aug 2026</p>
+          </div>
         </header>
 
-        <div class="project-body">
-          <div class="project-copy">
-            <p>
-              For GCA, I built Nöz as an end-to-end digital brand experience:
-              positioning, site structure, and the scroll journey shoppers take through the story.
+        <div class="gca-split">
+          <article class="gca-col">
+            <h3 class="col-title">Nöz</h3>
+            <p class="col-copy">
+              End-to-end digital brand experience: positioning, site structure,
+              and the scroll journey. I treated the site like a retail floor online.
             </p>
-            <p>
-              I treated the site like a retail floor online: clear hierarchy,
-              intentional pacing, and visuals that pull you through.
-            </p>
-          </div>
+            <figure class="media-block video-block noz-video">
+              <video
+                class="project-video"
+                controls
+                muted
+                playsinline
+                preload="metadata"
+                poster="assets/images/noz-still.jpg"
+                aria-label="Nöz site scroll walkthrough"
+              >
+                <source src="assets/video/noz-scroll.mp4" type="video/mp4" />
+              </video>
+              <figcaption>Site scroll walkthrough</figcaption>
+            </figure>
+          </article>
 
-          <figure class="media-block video-block">
-            <video
-              class="project-video"
-              controls
-              muted
-              playsinline
-              preload="metadata"
-              poster="assets/images/noz-still.jpg"
-              aria-label="Nöz site scroll walkthrough"
-            >
-              <source src="assets/video/noz-scroll.mp4" type="video/mp4" />
-            </video>
-            <figcaption>Site scroll walkthrough · muted with controls</figcaption>
-          </figure>
+          <article class="gca-col">
+            <h3 class="col-title">charity: water</h3>
+            <p class="col-copy">
+              Student landing page “Join the Current.” $1/month entry, clear headline,
+              yellow CTA, arched story imagery.
+            </p>
+            <figure class="media-block charity-visual">
+              <img
+                src="assets/images/charity-water-page.jpg"
+                alt="charity: water Join the Current student landing page"
+                loading="lazy"
+                width="1400"
+                height="787"
+              />
+              <figcaption>Join the Current · May–Aug 2026</figcaption>
+            </figure>
+          </article>
         </div>
-
-        <aside class="side-project charity-block">
-          <div class="charity-copy">
-            <p class="eyebrow">Also from GCA</p>
-            <h3 class="side-title">charity: water</h3>
-            <p class="side-copy">
-              I designed a student-focused charity: water landing page called “Join the Current.”
-              $1/month entry, a clear headline, a yellow CTA, and arched story imagery.
-              Part of my Global Career Accelerator digital campaign work.
-              <span class="side-meta">May–Aug 2026</span>
-            </p>
-          </div>
-          <figure class="media-block charity-visual">
-            <img
-              src="assets/images/charity-water-page.jpg"
-              alt="charity: water Join the Current student landing page with yellow CTA and arched story imagery"
-              loading="lazy"
-              width="1280"
-              height="800"
-            />
-            <figcaption>Join the Current landing page</figcaption>
-          </figure>
-        </aside>
       </div>
     </section>
 
     <!-- WANTLOCKER -->
     <section class="section project alt" id="wantlocker">
       <div class="section-inner">
-        <header class="section-header">
-          <p class="eyebrow">02 · WantLocker</p>
-          <h2 class="section-title">Campus Ambassador</h2>
-          <p class="section-kicker">Digital edits &amp; curation · @Closetaddkit</p>
+        <header class="section-header compact wl-header">
+          <div class="section-mark" aria-hidden="true">02</div>
+          <div class="section-heading">
+            <p class="eyebrow">WantLocker</p>
+            <h2 class="section-title">Collage Edit Boards</h2>
+            <p class="section-kicker">Campus Ambassador · Locker @Closetaddkit</p>
+          </div>
         </header>
 
-        <div class="project-body">
-          <div class="project-copy">
-            <p>
-              Seasonal and occasion edits with naming, assortment, and cover direction,
-              so each collection feels like a point of view, not a random dump of SKUs.
-            </p>
-            <p class="stat-line">
-              <span>~25 collections</span>
-              <span class="dot" aria-hidden="true">·</span>
-              <span>50+ items each</span>
-            </p>
-            <p>
-              <a class="text-link" href="https://www.wantlocker.com/users/Closetaddkit" target="_blank" rel="noopener noreferrer">
-                www.wantlocker.com/users/Closetaddkit
-              </a>
-            </p>
-          </div>
+        <div class="wl-intro">
+          <p>
+            I design collage edit boards for Locker: point of view and assortment
+            storytelling so each collection feels intentional, not a random dump of SKUs.
+          </p>
+          <p>
+            <a class="text-link" href="https://www.wantlocker.com/users/Closetaddkit" target="_blank" rel="noopener noreferrer">
+              @Closetaddkit
+            </a>
+            <span class="meta-sep" aria-hidden="true">·</span>
+            <a class="text-link subtle" href="https://www.wantlocker.com/users/Closetaddkit" target="_blank" rel="noopener noreferrer">
+              View all collections
+            </a>
+          </p>
+        </div>
 
-          <div class="edits-block">
-            <p class="featured-label">Featured edits</p>
-            <div class="edits-grid" aria-label="Featured WantLocker edits">
-              <figure class="edit-card">
-                <img
-                  src="assets/images/edit-night-out.jpg"
-                  alt="The Night Out Edit collection cover on WantLocker"
-                  loading="lazy"
-                  width="800"
-                  height="1000"
-                />
-                <figcaption>The Night Out Edit</figcaption>
-              </figure>
-              <figure class="edit-card">
-                <img
-                  src="assets/images/edit-fall.jpg"
-                  alt="The Fall Edit collection cover on WantLocker"
-                  loading="lazy"
-                  width="800"
-                  height="1000"
-                />
-                <figcaption>The Fall Edit</figcaption>
-              </figure>
-              <figure class="edit-card">
-                <img
-                  src="assets/images/edit-office.jpg"
-                  alt="The Office Edit collection cover on WantLocker"
-                  loading="lazy"
-                  width="800"
-                  height="1000"
-                />
-                <figcaption>The Office Edit</figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <figure class="media-block collections-grid">
+        <p class="featured-label">Featured boards</p>
+        <div class="edits-grid" aria-label="Featured WantLocker collage boards">
+          <figure class="edit-card">
             <img
-              src="assets/images/wantlocker-grid.jpg"
-              alt="Grid of WantLocker @Closetaddkit seasonal and occasion collection covers"
+              src="assets/images/edit-lounge.jpg"
+              alt="The Lounge Edit collage board"
               loading="lazy"
-              width="1600"
-              height="1200"
+              width="1200"
+              height="1600"
             />
-            <figcaption>@Closetaddkit collections grid</figcaption>
+            <figcaption>The Lounge Edit</figcaption>
+          </figure>
+          <figure class="edit-card">
+            <img
+              src="assets/images/edit-active.jpg"
+              alt="The Active Edit collage board"
+              loading="lazy"
+              width="1200"
+              height="1600"
+            />
+            <figcaption>The Active Edit</figcaption>
+          </figure>
+          <figure class="edit-card">
+            <img
+              src="assets/images/edit-night-out-board.jpg"
+              alt="The Night Out Edit collage board"
+              loading="lazy"
+              width="1200"
+              height="1600"
+            />
+            <figcaption>The Night Out Edit</figcaption>
           </figure>
         </div>
       </div>
@@ -202,23 +190,24 @@
     <!-- CAMPUS CLOSET -->
     <section class="section project" id="campus-closet">
       <div class="section-inner">
-        <header class="section-header">
-          <p class="eyebrow">03 · Campus Closet</p>
-          <h2 class="section-title">Visual Merchandising &amp; Events</h2>
-          <p class="section-kicker">
-            Visual Merchandising and Event Coordinator Intern · UA Retail Lab / Terry J. Lundgren Center · Aug 2026–Present
-          </p>
+        <header class="section-header compact">
+          <div class="section-mark" aria-hidden="true">03</div>
+          <div class="section-heading">
+            <p class="eyebrow">Campus Closet</p>
+            <h2 class="section-title">Visual Merchandising</h2>
+            <p class="section-kicker">Event Coordinator Intern · UA Retail Lab · Aug 2026–Present</p>
+          </div>
         </header>
 
-        <div class="project-body">
-          <div class="project-copy">
+        <div class="closet-split">
+          <div class="closet-copy">
             <p>
               Assortment and floor for Campus Closet’s professional-wear boutique.
               Deciding what earns a hanger and placing every piece so the store reads clearly.
             </p>
             <p>
               Weekly sticker system: a new hanger color each week so we can see what’s moving,
-              what’s sitting, and what should transfer to the other location.
+              what’s sitting, and what should transfer.
             </p>
             <p class="event-note">
               <strong>First campus event:</strong> October 22, 2026
@@ -251,7 +240,7 @@
             <figure class="media-block ba-card">
               <img
                 src="assets/closet/display-mannequin.jpeg"
-                alt="Mannequin display in Campus Closet professional-wear boutique"
+                alt="Mannequin display in Campus Closet"
                 loading="lazy"
                 width="1400"
                 height="1050"
@@ -276,14 +265,17 @@
     <!-- VS WEAR TEST -->
     <section class="section project alt" id="vs-wear-test">
       <div class="section-inner">
-        <header class="section-header">
-          <p class="eyebrow">04 · Victoria’s Secret</p>
-          <h2 class="section-title">Wear Test</h2>
-          <p class="section-kicker">Campus event · Social reel</p>
+        <header class="section-header compact">
+          <div class="section-mark" aria-hidden="true">04</div>
+          <div class="section-heading">
+            <p class="eyebrow">Victoria’s Secret</p>
+            <h2 class="section-title">Wear Test</h2>
+            <p class="section-kicker">Campus event · Social reel</p>
+          </div>
         </header>
 
-        <div class="project-body">
-          <div class="project-copy">
+        <div class="vs-split">
+          <div class="vs-copy">
             <p>
               Campus event social reel for the Victoria’s Secret Wear Test:
               welcome moment, product and activation details, student energy,
@@ -303,71 +295,70 @@
             >
               <source src="assets/video/vs-wear-test.mp4" type="video/mp4" />
             </video>
-            <figcaption>Wear Test reel · muted with controls</figcaption>
+            <figcaption>Wear Test reel</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section about" id="about">
-      <div class="section-inner about-inner">
-        <header class="section-header">
-          <p class="eyebrow">About</p>
-          <h2 class="section-title">Allison Pearlman</h2>
-        </header>
-        <p class="about-lede">
-          I’m a Retailing and Consumer Science major at the University of Arizona,
-          graduating early in May 2027. I want to work in creative direction inside
-          real retail, where taste, product, and how people move through a space
-          or a feed all matter.
-        </p>
-        <ul class="role-list">
-          <li>
-            <span class="role-title">Visual Merchandising &amp; Event Coordinator Intern</span>
-            <span class="role-place">Campus Closet / UA Retail Lab</span>
-            <span class="role-dates">Aug 2026–Present</span>
-          </li>
-          <li>
-            <span class="role-title">Campus Ambassador</span>
-            <span class="role-place">WantLocker</span>
-            <span class="role-dates">2026–2027</span>
-          </li>
-          <li>
-            <span class="role-title">Digital Marketing</span>
-            <span class="role-place">Global Career Accelerator</span>
-            <span class="role-dates">May–Aug 2026</span>
-          </li>
-          <li>
-            <span class="role-title">Campus Marketing Intern</span>
-            <span class="role-place">Hang Loose Hut</span>
-            <span class="role-dates">Jan–Jul 2025</span>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <!-- ABOUT + CONTACT -->
+    <section class="section about-contact" id="about">
+      <div class="section-inner about-contact-inner">
+        <div class="about-col">
+          <header class="section-header compact">
+            <p class="eyebrow">About</p>
+            <h2 class="section-title">Allison Pearlman</h2>
+          </header>
+          <p class="about-lede">
+            I’m a Retailing and Consumer Science major at the University of Arizona,
+            graduating early in May 2027. I want to work in creative direction inside
+            real retail, where taste, product, and how people move through a space
+            or a feed all matter.
+          </p>
+          <ul class="role-list">
+            <li>
+              <span class="role-title">Visual Merchandising &amp; Event Coordinator Intern</span>
+              <span class="role-place">Campus Closet / UA Retail Lab</span>
+              <span class="role-dates">Aug 2026–Present</span>
+            </li>
+            <li>
+              <span class="role-title">Campus Ambassador</span>
+              <span class="role-place">WantLocker</span>
+              <span class="role-dates">2026–2027</span>
+            </li>
+            <li>
+              <span class="role-title">Digital Marketing</span>
+              <span class="role-place">Global Career Accelerator</span>
+              <span class="role-dates">May–Aug 2026</span>
+            </li>
+            <li>
+              <span class="role-title">Campus Marketing Intern</span>
+              <span class="role-place">Hang Loose Hut</span>
+              <span class="role-dates">Jan–Jul 2025</span>
+            </li>
+          </ul>
+        </div>
 
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <div class="section-inner contact-inner">
-        <header class="section-header">
-          <p class="eyebrow">Contact</p>
-          <h2 class="section-title">Let’s connect</h2>
-        </header>
-        <ul class="contact-list">
-          <li>
-            <span class="contact-label">Email</span>
-            <a href="mailto:allisonrpearlman@gmail.com">allisonrpearlman@gmail.com</a>
-          </li>
-          <li>
-            <span class="contact-label">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/allison-pearlman" target="_blank" rel="noopener noreferrer">linkedin.com/in/allison-pearlman</a>
-          </li>
-          <li>
-            <span class="contact-label">WantLocker</span>
-            <a href="https://www.wantlocker.com/users/Closetaddkit" target="_blank" rel="noopener noreferrer">@Closetaddkit</a>
-          </li>
-        </ul>
+        <div class="contact-col" id="contact">
+          <header class="section-header compact">
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-title contact-title">Let’s connect</h2>
+          </header>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:allisonrpearlman@gmail.com">allisonrpearlman@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/allison-pearlman" target="_blank" rel="noopener noreferrer">linkedin.com/in/allison-pearlman</a>
+            </li>
+            <li>
+              <span class="contact-label">WantLocker</span>
+              <a href="https://www.wantlocker.com/users/Closetaddkit" target="_blank" rel="noopener noreferrer">@Closetaddkit</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
