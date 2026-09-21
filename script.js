@@ -6,6 +6,9 @@
   const piItems = document.querySelectorAll(".project-index .pi-item");
   const sections = document.querySelectorAll("main section[id]");
   const yearEl = document.getElementById("year");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = lightbox ? lightbox.querySelector(".lightbox-img") : null;
+  const lightboxClose = lightbox ? lightbox.querySelector(".lightbox-close") : null;
 
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
@@ -38,7 +41,6 @@
   function setActive(id) {
     navLinks.forEach((link) => {
       const href = link.getAttribute("href");
-      // "Work" points at #gca; treat home as inactive once past hero
       const match = href === "#" + id;
       link.classList.toggle("is-active", match);
     });
@@ -59,7 +61,6 @@
             piItems.forEach((i) => i.classList.remove("is-active"));
             return;
           }
-          // contact is nested in about; keep about active
           if (id === "contact") {
             setActive("about");
             return;
@@ -79,5 +80,56 @@
         if (other !== video && !other.paused) other.pause();
       });
     });
+  });
+
+  /* WantLocker board lightbox */
+  function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.hidden = true;
+    lightboxImg.src = "";
+    lightboxImg.alt = "";
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".edit-card[data-lightbox]").forEach((card) => {
+    const open = () => {
+      const src = card.getAttribute("data-lightbox");
+      const img = card.querySelector("img");
+      openLightbox(src, img ? img.alt : "");
+    };
+    card.addEventListener("click", open);
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        open();
+      }
+    });
+  });
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox && !lightbox.hidden) {
+      closeLightbox();
+    }
   });
 })();
