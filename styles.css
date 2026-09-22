@@ -491,7 +491,7 @@ a:hover {
 .charity-visual .media-frame {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   height: auto;
   max-height: 240px;
   background: #1a1a1a;
