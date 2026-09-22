@@ -132,4 +132,75 @@
       closeLightbox();
     }
   });
+
+  /* Campus Closet before/after compare — swap files later, keep filenames */
+  document.querySelectorAll("[data-ba-compare]").forEach((root) => {
+    const beforeWrap = root.querySelector(".ba-compare-before");
+    const beforeImg = root.querySelector(".ba-compare-img--before");
+    const handle = root.querySelector(".ba-compare-handle");
+    if (!beforeWrap || !beforeImg || !handle) return;
+
+    const setPos = (pct) => {
+      const p = Math.max(0, Math.min(100, pct));
+      beforeWrap.style.width = p + "%";
+      handle.style.left = p + "%";
+      handle.setAttribute("aria-valuenow", String(Math.round(p)));
+      // keep before image full-frame width so it doesn't squash as the clip shrinks
+      beforeImg.style.width = root.clientWidth + "px";
+    };
+
+    const fromEvent = (clientX) => {
+      const rect = root.getBoundingClientRect();
+      if (!rect.width) return;
+      setPos(((clientX - rect.left) / rect.width) * 100);
+    };
+
+    let dragging = false;
+    const start = (e) => {
+      dragging = true;
+      root.classList.add("is-dragging");
+      if (e.touches) fromEvent(e.touches[0].clientX);
+      else fromEvent(e.clientX);
+      e.preventDefault();
+    };
+    const move = (e) => {
+      if (!dragging) return;
+      if (e.touches) fromEvent(e.touches[0].clientX);
+      else fromEvent(e.clientX);
+    };
+    const end = () => {
+      dragging = false;
+      root.classList.remove("is-dragging");
+    };
+
+    root.addEventListener("mousedown", start);
+    window.addEventListener("mousemove", move);
+    window.addEventListener("mouseup", end);
+    root.addEventListener("touchstart", start, { passive: false });
+    window.addEventListener("touchmove", move, { passive: true });
+    window.addEventListener("touchend", end);
+
+    handle.addEventListener("keydown", (e) => {
+      const now = Number(handle.getAttribute("aria-valuenow") || 50);
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        setPos(now - 3);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        setPos(now + 3);
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        setPos(0);
+      } else if (e.key === "End") {
+        e.preventDefault();
+        setPos(100);
+      }
+    });
+
+    const syncWidth = () => setPos(Number(handle.getAttribute("aria-valuenow") || 50));
+    window.addEventListener("resize", syncWidth);
+    if (beforeImg.complete) syncWidth();
+    else beforeImg.addEventListener("load", syncWidth);
+    setPos(50);
+  });
 })();

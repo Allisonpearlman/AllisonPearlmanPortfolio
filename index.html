@@ -5,10 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Allison Pearlman — Aspiring Creative Director. Portfolio of retail, visual merchandising, and digital brand work." />
   <title>Allison Pearlman — Portfolio</title>
+  <link rel="canonical" href="https://allisonpearlman.github.io/AllisonPearlmanPortfolio/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://allisonpearlman.github.io/AllisonPearlmanPortfolio/" />
+  <meta property="og:title" content="Allison Pearlman — Portfolio" />
+  <meta property="og:description" content="Creative retail, visual merchandising, and brand visuals. Selected work for ELC, Gap, and Victoria’s Secret early talent." />
+  <meta property="og:image" content="https://allisonpearlman.github.io/AllisonPearlmanPortfolio/assets/images/headshot.jpg" />
+  <meta property="og:image:alt" content="Portrait of Allison Pearlman" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Allison Pearlman — Portfolio" />
+  <meta name="twitter:description" content="Creative retail, visual merchandising, and brand visuals." />
+  <meta name="twitter:image" content="https://allisonpearlman.github.io/AllisonPearlmanPortfolio/assets/images/headshot.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=copy-even1" />
+  <link rel="stylesheet" href="styles.css?v=polish1" />
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
@@ -48,6 +59,7 @@
           <p class="eyebrow">Portfolio</p>
           <h1 class="hero-name">Allison Pearlman</h1>
           <p class="hero-role">Aspiring Creative Director</p>
+          <p class="hero-tagline">Creative retail · visual merchandising · brand visuals</p>
           <p class="hero-lede">
             I’m a Retailing and Consumer Science student building a creative
             retail POV. How product, space, and story look and feel in a store,
@@ -218,49 +230,67 @@
             </p>
           </div>
 
-          <div class="ba-grid" aria-label="Campus Closet floor photos">
-            <figure class="media-block ba-card">
-              <span class="ba-label">Before</span>
+          <div class="closet-media" aria-label="Campus Closet floor photos">
+            <!-- Swap photos later: replace assets/closet/blazers-before.jpeg + blazers-after.jpeg (keep filenames). -->
+            <figure class="ba-compare" data-ba-compare>
               <img
-                src="assets/closet/blazers-before.jpeg"
-                alt="Blazer wall before visual merchandising reset"
-                loading="lazy"
-                width="1400"
-                height="1050"
-              />
-              <figcaption>Blazer wall, before</figcaption>
-            </figure>
-            <figure class="media-block ba-card">
-              <span class="ba-label">After</span>
-              <img
+                class="ba-compare-img ba-compare-img--after"
                 src="assets/closet/blazers-after.jpeg"
                 alt="Blazer wall after visual merchandising reset"
                 loading="lazy"
                 width="1400"
                 height="1050"
+                draggable="false"
               />
-              <figcaption>Blazer wall, after</figcaption>
+              <div class="ba-compare-before" style="width: 50%">
+                <img
+                  class="ba-compare-img ba-compare-img--before"
+                  src="assets/closet/blazers-before.jpeg"
+                  alt="Blazer wall before visual merchandising reset"
+                  loading="lazy"
+                  width="1400"
+                  height="1050"
+                  draggable="false"
+                />
+              </div>
+              <div
+                class="ba-compare-handle"
+                role="slider"
+                tabindex="0"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="50"
+                aria-label="Drag to compare before and after"
+              >
+                <span class="ba-compare-knob" aria-hidden="true"></span>
+              </div>
+              <span class="ba-compare-chip ba-compare-chip--before">Before</span>
+              <span class="ba-compare-chip ba-compare-chip--after">After</span>
+              <figcaption>Blazer wall — drag to compare</figcaption>
             </figure>
-            <figure class="media-block ba-card">
-              <img
-                src="assets/closet/display-mannequin.jpeg"
-                alt="Mannequin display in Campus Closet"
-                loading="lazy"
-                width="1400"
-                height="1050"
-              />
-              <figcaption>Mannequin display</figcaption>
-            </figure>
-            <figure class="media-block ba-card">
-              <img
-                src="assets/closet/store-overview.jpeg"
-                alt="Store overview of Campus Closet floor"
-                loading="lazy"
-                width="1600"
-                height="900"
-              />
-              <figcaption>Store overview</figcaption>
-            </figure>
+
+            <div class="closet-extra">
+              <figure class="media-block ba-card">
+                <img
+                  src="assets/closet/display-mannequin.jpeg"
+                  alt="Mannequin display in Campus Closet"
+                  loading="lazy"
+                  width="1400"
+                  height="1050"
+                />
+                <figcaption>Mannequin display</figcaption>
+              </figure>
+              <figure class="media-block ba-card">
+                <img
+                  src="assets/closet/store-overview.jpeg"
+                  alt="Store overview of Campus Closet floor"
+                  loading="lazy"
+                  width="1600"
+                  height="900"
+                />
+                <figcaption>Store overview</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </div>
@@ -473,6 +503,8 @@
     <img class="lightbox-img" src="" alt="" />
   </div>
 
-  <script src="script.js"></script>
+  <a class="sticky-email" href="mailto:allisonrpearlman@gmail.com">Email me</a>
+
+  <script src="script.js?v=polish1"></script>
 </body>
 </html>
