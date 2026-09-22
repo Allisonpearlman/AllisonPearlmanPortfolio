@@ -1020,7 +1020,7 @@ a:hover {
 }
 
 .vs-board-five .vs-reel video,
-.vs-board-five .vs-frame img {
+.vs-board-five .vs-frame:not(.vs-frame--flyer) img {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
@@ -1054,16 +1054,32 @@ a:hover {
   }
 }
 
-/* Top row: Wear Test + flyer share identical framing */
+/* Top row: same frame size; flyer uses contain so CHARMS & CAREERS stay fully visible */
+.vs-board-five .vs-row-top .vs-reel,
+.vs-board-five .vs-row-top .vs-frame {
+  display: flex;
+  flex-direction: column;
+}
+
 .vs-board-five .vs-row-top .vs-reel video,
 .vs-board-five .vs-row-top .vs-frame img {
   width: 100%;
   aspect-ratio: 3 / 4;
   max-height: 340px;
-  object-fit: cover;
-  object-position: center center;
   margin-inline: auto;
   display: block;
+  background: #efe8dc;
+}
+
+.vs-board-five .vs-row-top .vs-reel video {
+  object-fit: cover;
+  object-position: center center;
   background: #111;
+}
+
+.vs-board-five .vs-row-top .vs-frame--flyer img,
+.vs-board-five .vs-row-top .vs-frame img {
+  object-fit: contain;
+  object-position: center center;
 }
 
