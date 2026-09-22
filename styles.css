@@ -1061,3 +1061,16 @@ a:hover {
   width: 100%;
   margin-inline: auto;
 }
+.vs-board-five .vs-row-top .vs-frame--flyer img {
+  object-fit: contain;
+  background: #f3eee6;
+}
+
+
+/* Flyer must show full sheet (CAREERS etc.) — never cover-crop */
+.vs-board-five .vs-row-top .vs-frame--flyer img {
+  object-fit: contain;
+  object-position: center center;
+  background: #f3eee6;
+}
+
