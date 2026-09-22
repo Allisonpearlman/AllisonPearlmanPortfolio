@@ -468,14 +468,14 @@ a:hover {
   filter: grayscale(6%);
 }
 
-/* ——— GCA: wider frames, native aspect — nothing cropped ——— */
+/* ——— GCA: identical frames, a notch smaller ——— */
 .gca-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(1rem, 2.5vw, 1.5rem);
+  gap: clamp(0.9rem, 2vw, 1.25rem);
   align-items: stretch;
   width: 100%;
-  max-width: 1180px; /* wider so landscape pieces fit fully */
+  max-width: 900px; /* a little smaller than before */
   margin-inline: auto;
 }
 
@@ -496,28 +496,34 @@ a:hover {
   margin-top: auto;
 }
 
-/* No fixed aspect box — media keeps its own ratio end to end */
+/* Exact same box for both — width + height locked together */
 .noz-video .media-frame,
 .charity-visual .media-frame {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  aspect-ratio: 16 / 9;
   height: auto;
-  max-height: none;
-  background: transparent;
+  max-height: 250px;
+  box-sizing: border-box;
+  background: #fff;
   border-radius: var(--media-radius);
-  overflow: visible;
-  border: 1px solid rgba(28, 28, 28, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(28, 28, 28, 0.14);
+  box-shadow:
+    0 1px 2px rgba(28, 28, 28, 0.05),
+    0 6px 16px rgba(28, 28, 28, 0.06);
 }
 
 .noz-video video,
 .charity-visual img {
   width: 100%;
-  height: auto; /* natural height — full artifact */
-  max-height: none;
-  object-fit: unset;
+  height: 100%;
+  object-fit: contain; /* full artifact, equal frame */
+  object-position: center center;
   display: block;
   background: #fff;
-  vertical-align: top;
 }
 
 .noz-video figcaption,
