@@ -298,10 +298,12 @@ a:hover {
 .section-title {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(2rem, 4.2vw, 3rem);
-  line-height: 1.02;
+  font-size: clamp(1.65rem, 3.6vw, 2.85rem);
+  line-height: 1.05;
   letter-spacing: -0.015em;
   margin: 0 0 0.35rem;
+  white-space: nowrap; /* titles stay one line across */
+  max-width: none;
 }
 
 .section-kicker {
@@ -539,8 +541,9 @@ a:hover {
 }
 
 .wl-header .section-title {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  max-width: 14ch;
+  font-size: clamp(1.65rem, 3.6vw, 2.85rem);
+  max-width: none;
+  white-space: nowrap;
 }
 
 .edits-grid {
@@ -548,7 +551,7 @@ a:hover {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--media-gap);
   align-items: stretch;
-  max-width: 940px;
+  max-width: 860px;
   margin: 0 auto 1.35rem;
 }
 
@@ -575,7 +578,7 @@ a:hover {
 .edit-card img {
   width: 100%;
   height: auto;
-  max-height: 380px;
+  max-height: 340px;
   aspect-ratio: 3 / 4;
   object-fit: contain; /* full board — never crop */
   object-position: center center;
@@ -597,7 +600,7 @@ a:hover {
 }
 
 .wl-collections {
-  max-width: 980px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -901,8 +904,9 @@ a:hover {
 }
 
 #vs-wear-test .section-title {
-  font-size: clamp(1.75rem, 3.2vw, 2.45rem);
-  max-width: 22ch;
+  font-size: clamp(1.55rem, 3.2vw, 2.55rem);
+  max-width: none;
+  white-space: nowrap;
 }
 
 .vs-lede {
@@ -1250,5 +1254,16 @@ a:hover {
 
   .hlh-card--phone {
     max-width: 220px;
+  }
+}
+
+
+/* titles stay one line on small screens too */
+@media (max-width: 720px) {
+  .section-title,
+  .wl-header .section-title,
+  #vs-wear-test .section-title {
+    white-space: nowrap;
+    font-size: clamp(1.25rem, 5.2vw, 1.85rem);
   }
 }
