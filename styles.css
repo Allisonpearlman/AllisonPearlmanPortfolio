@@ -1169,7 +1169,7 @@ a:hover {
   margin: 0;
   min-width: 0;
   width: 100%;
-  max-width: 200px;
+  max-width: 210px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1183,49 +1183,49 @@ a:hover {
   width: 100%;
 }
 
+/* Soft warm graphite — not stark black */
 .hlh-card--phone .phone-bezel {
   position: relative;
   width: 100%;
-  aspect-ratio: 9 / 19.5;
-  max-height: 420px;
   margin-inline: auto;
-  padding: 10px 9px 12px;
-  background: linear-gradient(160deg, #2a2a2a 0%, #111 45%, #1c1c1c 100%);
-  border-radius: 28px;
+  padding: 7px 6px 8px;
+  background: linear-gradient(165deg, #6a645c 0%, #524c46 55%, #48423c 100%);
+  border-radius: 26px;
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-    0 12px 28px rgba(28, 28, 28, 0.18);
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 0 0 1px rgba(28, 28, 28, 0.08),
+    0 10px 22px rgba(28, 28, 28, 0.12);
   box-sizing: border-box;
 }
 
 .hlh-card--phone .phone-notch {
   position: absolute;
-  top: 14px;
+  top: 11px;
   left: 50%;
   transform: translateX(-50%);
-  width: 38%;
-  height: 11px;
-  background: #0a0a0a;
+  width: 34%;
+  height: 9px;
+  background: #3a3530;
   border-radius: 999px;
   z-index: 2;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
 }
 
+/* Screen matches Instagram story 9:16 so art fills edge-to-edge */
 .hlh-card--phone .phone-screen {
   width: 100%;
-  height: 100%;
-  border-radius: 20px;
+  aspect-ratio: 9 / 16;
+  border-radius: 19px;
   overflow: hidden;
-  background: #f7f4ef;
+  background: #eeeae3;
 }
 
 .hlh-card--phone .phone-screen img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover; /* assets are already 9:16 — fills screen, no squash */
   object-position: center center;
   display: block;
-  background: #fff;
 }
 
 .hlh-card figcaption,
