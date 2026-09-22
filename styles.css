@@ -979,15 +979,87 @@ a:hover {
   }
 }
 
-.vs-row-two {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: calc((100% - clamp(0.75rem, 2vw, 1.15rem)) * 2 / 3 + clamp(0.75rem, 2vw, 1.15rem));
-  /* two tiles sized like the top-row cards, left-aligned under reel+masks */
-}
-@media (max-width: 720px) {
-  .vs-row-two {
-    max-width: 320px;
-    grid-template-columns: 1fr;
-  }
+/* VS five-up: tall reel + 2×2 stills */
+.vs-board-five {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: clamp(0.75rem, 2vw, 1.15rem);
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  align-items: stretch;
 }
 
+.vs-board-five .vs-reel {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--white, #fff);
+  padding: 0.4rem;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(28, 28, 28, 0.05);
+}
+
+.vs-board-five .vs-reel video {
+  width: 100%;
+  flex: 1 1 auto;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  object-fit: cover;
+  border-radius: 1px;
+  background: #111;
+  display: block;
+}
+
+.vs-board-five .vs-frame {
+  margin: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--white, #fff);
+  padding: 0.4rem;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(28, 28, 28, 0.05);
+}
+
+.vs-board-five .vs-frame img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1px;
+  display: block;
+  background: #efeae2;
+}
+
+.vs-board-five .vs-reel figcaption,
+.vs-board-five .vs-frame figcaption {
+  margin: 0.55rem 0 0.15rem;
+  font-family: var(--serif);
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text, #1c1c1c);
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .vs-board-five {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    max-width: 320px;
+  }
+  .vs-board-five .vs-reel {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .vs-board-five .vs-reel video {
+    aspect-ratio: 3 / 4;
+    height: auto;
+  }
+}
