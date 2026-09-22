@@ -10,7 +10,7 @@
   --white: #FFFEFB;
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans: "DM Sans", system-ui, -apple-system, sans-serif;
-  --max: 1100px;
+  --max: 1200px;
   --pad: clamp(1.25rem, 4vw, 2.5rem);
   --header-h: 3.5rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
