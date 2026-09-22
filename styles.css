@@ -298,8 +298,8 @@ a:hover {
 .section-title {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(1.65rem, 3.6vw, 2.85rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  line-height: 1.02;
   letter-spacing: -0.015em;
   margin: 0 0 0.35rem;
   white-space: nowrap; /* titles stay one line across */
@@ -619,14 +619,12 @@ a:hover {
   color: var(--muted);
 }
 
-/* ——— Campus Closet ——— */
+/* ——— Campus Closet (original split + 4:3 photos) ——— */
 .closet-split {
   display: grid;
   grid-template-columns: minmax(200px, 0.85fr) 1.4fr;
   gap: clamp(1.35rem, 3vw, 2.5rem);
   align-items: start;
-  max-width: var(--media-board);
-  margin-inline: auto;
 }
 
 .closet-copy {
@@ -653,7 +651,7 @@ a:hover {
 .ba-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--media-gap);
+  gap: 0.75rem 0.9rem;
 }
 
 .ba-card {
@@ -662,12 +660,11 @@ a:hover {
 }
 
 .ba-card img {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center;
   width: 100%;
   height: auto;
-  max-height: var(--media-tile-h);
   display: block;
   border-radius: 1px;
 }
