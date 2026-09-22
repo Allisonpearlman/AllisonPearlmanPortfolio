@@ -468,13 +468,14 @@ a:hover {
   filter: grayscale(6%);
 }
 
-/* ——— GCA: equal landscape frames, full artifact visible ——— */
+/* ——— GCA: wider frames, native aspect — nothing cropped ——— */
 .gca-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--media-gap);
+  gap: clamp(1rem, 2.5vw, 1.5rem);
   align-items: stretch;
-  max-width: 980px; /* a bit bigger, still paired */
+  width: 100%;
+  max-width: 1180px; /* wider so landscape pieces fit fully */
   margin-inline: auto;
 }
 
@@ -495,28 +496,28 @@ a:hover {
   margin-top: auto;
 }
 
-/* Landscape frames match the real assets — no crop, no squash */
+/* No fixed aspect box — media keeps its own ratio end to end */
 .noz-video .media-frame,
 .charity-visual .media-frame {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
   height: auto;
   max-height: none;
-  background: #f3efe8;
+  background: transparent;
   border-radius: var(--media-radius);
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid rgba(28, 28, 28, 0.08);
 }
 
 .noz-video video,
 .charity-visual img {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* whole walkthrough + full charity page */
-  object-position: center center;
-  background: #f3efe8;
+  height: auto; /* natural height — full artifact */
+  max-height: none;
+  object-fit: unset;
   display: block;
+  background: #fff;
+  vertical-align: top;
 }
 
 .noz-video figcaption,
