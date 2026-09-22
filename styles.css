@@ -1090,7 +1090,7 @@ a:hover {
 }
 
 
-/* ——— Hang Loose Hut compact strip ——— */
+/* ——— Hang Loose Hut compact strip (match VS tile scale + card border) ——— */
 .hlh-lede {
   max-width: 40rem;
   margin: 0 0 1.5rem;
@@ -1103,6 +1103,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: var(--media-gap);
+  width: 100%;
   max-width: var(--media-board);
   margin-inline: auto;
 }
@@ -1110,11 +1111,15 @@ a:hover {
 .hlh-row {
   display: grid;
   gap: var(--media-gap);
+  align-items: stretch;
 }
 
+/* Same pattern as VS: equal 2 on top (narrower), equal 3 below */
 .hlh-row-merch {
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  align-items: stretch;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 78%;
+  max-width: 640px;
+  margin-inline: auto;
 }
 
 .hlh-row-work {
@@ -1126,9 +1131,10 @@ a:hover {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  background: var(--white);
+  background: var(--white, #fff);
   padding: var(--media-pad);
   border-radius: var(--media-radius);
+  border: 1px solid rgba(28, 28, 28, 0.12);
   box-shadow: 0 1px 0 rgba(28, 28, 28, 0.05);
 }
 
@@ -1138,33 +1144,37 @@ a:hover {
   aspect-ratio: 3 / 4;
   max-height: var(--media-tile-h);
   overflow: hidden;
-  background: #f3efe8;
-  border-radius: var(--media-radius);
-}
-
-.hlh-frame--pin {
-  aspect-ratio: 3 / 4;
-  max-height: var(--media-tile-h);
-  margin-inline: auto;
-}
-
-.hlh-frame--jersey {
-  aspect-ratio: 3 / 4;
-  max-height: var(--media-tile-h);
+  background: #ece7df;
+  border-radius: 1px;
 }
 
 .hlh-frame img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  background: #ece7df;
+}
+
+/* Merch mockups: keep full product in frame without changing tile size */
+.hlh-frame--pin img,
+.hlh-frame--jersey img {
   object-fit: contain;
   object-position: center;
-  display: block;
   background: #fff;
 }
 
-.hlh-row-work .hlh-frame img {
-  object-fit: cover;
-  object-position: top center;
+/* Light social graphic needs a hairline so cream paper reads on cream page */
+.hlh-card--todo .hlh-frame {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(28, 28, 28, 0.08);
+}
+
+.hlh-card--todo .hlh-frame img {
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
 }
 
 .hlh-card figcaption {
@@ -1173,7 +1183,7 @@ a:hover {
   font-size: clamp(0.85rem, 1.4vw, 1rem);
   font-style: italic;
   font-weight: 500;
-  color: var(--text);
+  color: var(--text, #1c1c1c);
   text-align: center;
 }
 
@@ -1181,9 +1191,8 @@ a:hover {
   .hlh-row-merch,
   .hlh-row-work {
     grid-template-columns: 1fr;
-  }
-
-  .hlh-frame--pin {
-    max-height: none;
+    max-width: 320px;
+    margin-inline: auto;
+    width: 100%;
   }
 }
