@@ -505,7 +505,7 @@ a:hover {
   width: 100%;
   aspect-ratio: 16 / 9;
   height: auto;
-  max-height: 250px;
+  max-height: min(280px, var(--media-tile-h));
   box-sizing: border-box;
   background: #fff;
   border-radius: var(--media-radius);
@@ -590,7 +590,7 @@ a:hover {
 .edit-card img {
   width: 100%;
   height: auto;
-  max-height: 340px;
+  max-height: var(--media-tile-h);
   aspect-ratio: 3 / 4;
   object-fit: contain; /* full board — never crop */
   object-position: center center;
@@ -1328,7 +1328,9 @@ a:hover {
   position: relative;
   margin: 0;
   width: 100%;
+  max-width: var(--media-board);
   aspect-ratio: 4 / 3;
+  max-height: calc(var(--media-tile-h) * 1.55);
   overflow: hidden;
   border-radius: 2px;
   background: #ddd8d0;
@@ -1453,29 +1455,33 @@ a:hover {
   pointer-events: none;
 }
 
+/* Uniform Closet tiles — same size as site media tiles */
 .closet-extra {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem 0.9rem;
+  gap: var(--media-gap);
 }
 
-.closet-extra__mannequin {
-  grid-column: 1 / -1;
+.closet-extra .media-tile {
+  margin: 0;
+  min-width: 0;
 }
 
-.closet-extra__mannequin img {
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+.closet-extra .media-tile img {
+  display: block;
   width: 100%;
-}
-
-.closet-extra .ba-card:not(.closet-extra__mannequin) img {
-  aspect-ratio: 4 / 3;
+  height: var(--media-tile-h);
   object-fit: cover;
-  width: 100%;
+  object-position: center;
+  border-radius: var(--media-radius);
+  border: 1px solid rgba(28, 28, 28, 0.12);
+  background: #ddd8d0;
+  box-shadow:
+    0 1px 2px rgba(28, 28, 28, 0.05),
+    0 8px 20px rgba(28, 28, 28, 0.07);
 }
 
-.closet-extra .ba-card figcaption {
+.closet-extra .media-tile figcaption {
   margin-top: 0.45rem;
   font-family: var(--serif);
   font-size: clamp(0.85rem, 1.4vw, 1rem);
@@ -1486,6 +1492,10 @@ a:hover {
 @media (max-width: 820px) {
   .closet-extra {
     grid-template-columns: 1fr 1fr;
+  }
+  .closet-extra .media-tile img {
+    height: auto;
+    max-height: var(--media-tile-h);
   }
 }
 
