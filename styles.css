@@ -15,6 +15,12 @@
   --header-h: 3.5rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --index-w: 4.5rem;
+  /* Shared artifact scale — matched to VS Wear Test tiles */
+  --media-board: 860px;
+  --media-tile-h: 340px;
+  --media-gap: clamp(0.75rem, 2vw, 1.15rem);
+  --media-pad: 0.4rem;
+  --media-radius: 2px;
 }
 
 *,
@@ -464,9 +470,10 @@ a:hover {
 .gca-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(1.25rem, 3vw, 2rem);
+  gap: var(--media-gap);
   align-items: stretch;
-  max-width: 780px;
+  max-width: var(--media-board);
+  margin-inline: auto;
 }
 
 .gca-col {
@@ -491,11 +498,11 @@ a:hover {
 .charity-visual .media-frame {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 4;
   height: auto;
-  max-height: 240px;
+  max-height: var(--media-tile-h);
   background: #1a1a1a;
-  border-radius: 2px;
+  border-radius: var(--media-radius);
   overflow: hidden;
 }
 
@@ -539,10 +546,10 @@ a:hover {
 .edits-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(0.55rem, 1.5vw, 0.85rem);
+  gap: var(--media-gap);
   align-items: stretch;
-  max-width: 560px; /* sit closer to GCA media scale */
-  margin: 0 auto 1.25rem;
+  max-width: var(--media-board);
+  margin: 0 auto 1.35rem;
 }
 
 .edit-card {
@@ -551,8 +558,8 @@ a:hover {
   flex-direction: column;
   min-width: 0;
   background: var(--white);
-  padding: 0.28rem;
-  border-radius: 2px;
+  padding: var(--media-pad);
+  border-radius: var(--media-radius);
   box-shadow: 0 1px 0 rgba(28, 28, 28, 0.05);
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
   cursor: zoom-in;
@@ -568,7 +575,7 @@ a:hover {
 .edit-card img {
   width: 100%;
   height: auto;
-  max-height: 220px; /* match GCA/VS tile scale */
+  max-height: var(--media-tile-h);
   aspect-ratio: 3 / 4;
   object-fit: contain; /* full board — never crop */
   object-position: center center;
@@ -578,19 +585,19 @@ a:hover {
 }
 
 .edit-card figcaption {
-  margin-top: 0.4rem;
+  margin: 0.55rem 0 0.15rem;
   font-family: var(--serif);
-  font-size: clamp(0.8rem, 1.2vw, 0.92rem);
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
   font-style: italic;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   color: var(--text);
   text-align: center;
   line-height: 1.2;
 }
 
 .wl-collections {
-  max-width: 560px;
+  max-width: var(--media-board);
   margin: 0 auto;
 }
 
@@ -615,6 +622,8 @@ a:hover {
   grid-template-columns: minmax(200px, 0.85fr) 1.4fr;
   gap: clamp(1.35rem, 3vw, 2.5rem);
   align-items: start;
+  max-width: var(--media-board);
+  margin-inline: auto;
 }
 
 .closet-copy {
@@ -641,7 +650,7 @@ a:hover {
 .ba-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem 0.9rem;
+  gap: var(--media-gap);
 }
 
 .ba-card {
@@ -650,10 +659,14 @@ a:hover {
 }
 
 .ba-card img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
+  object-position: center;
   width: 100%;
   height: auto;
+  max-height: var(--media-tile-h);
+  display: block;
+  border-radius: 1px;
 }
 
 .ba-label {
@@ -985,9 +998,9 @@ a:hover {
 .vs-board-five {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.75rem, 2vw, 1.15rem);
+  gap: var(--media-gap);
   width: 100%;
-  max-width: 860px;
+  max-width: var(--media-board);
   margin: 0 auto;
 }
 
@@ -1024,6 +1037,7 @@ a:hover {
 .vs-board-five .vs-frame img {
   width: 100%;
   aspect-ratio: 3 / 4;
+  max-height: var(--media-tile-h);
   object-fit: cover;
   object-position: center;
   border-radius: 1px;
@@ -1067,7 +1081,7 @@ a:hover {
 .vs-board-five .vs-row-top .vs-frame--flyer img {
   width: 100%;
   aspect-ratio: 3 / 4;
-  max-height: 340px;
+  max-height: var(--media-tile-h);
   margin-inline: auto;
   display: block;
   object-fit: cover;
@@ -1088,13 +1102,14 @@ a:hover {
 .hlh-board {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
-  max-width: 920px;
+  gap: var(--media-gap);
+  max-width: var(--media-board);
+  margin-inline: auto;
 }
 
 .hlh-row {
   display: grid;
-  gap: 0.9rem;
+  gap: var(--media-gap);
 }
 
 .hlh-row-merch {
@@ -1109,25 +1124,33 @@ a:hover {
 .hlh-card {
   margin: 0;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  padding: var(--media-pad);
+  border-radius: var(--media-radius);
+  box-shadow: 0 1px 0 rgba(28, 28, 28, 0.05);
 }
 
 .hlh-frame {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
+  max-height: var(--media-tile-h);
   overflow: hidden;
   background: #f3efe8;
-  border-radius: 2px;
+  border-radius: var(--media-radius);
 }
 
 .hlh-frame--pin {
-  aspect-ratio: 1 / 1;
-  max-height: 280px;
+  aspect-ratio: 3 / 4;
+  max-height: var(--media-tile-h);
   margin-inline: auto;
 }
 
 .hlh-frame--jersey {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 3 / 4;
+  max-height: var(--media-tile-h);
 }
 
 .hlh-frame img {
@@ -1145,10 +1168,13 @@ a:hover {
 }
 
 .hlh-card figcaption {
-  margin-top: 0.45rem;
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
-  color: var(--muted, #6b645c);
+  margin: 0.55rem 0 0.15rem;
+  font-family: var(--serif);
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
 }
 
 @media (max-width: 720px) {
