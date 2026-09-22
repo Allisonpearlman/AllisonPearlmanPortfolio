@@ -1090,7 +1090,7 @@ a:hover {
 }
 
 
-/* ——— Hang Loose Hut compact strip (match VS tile scale + card border) ——— */
+/* ——— Hang Loose Hut: merch cards + story phones ——— */
 .hlh-lede {
   max-width: 40rem;
   margin: 0 0 1.5rem;
@@ -1114,7 +1114,6 @@ a:hover {
   align-items: stretch;
 }
 
-/* Same pattern as VS: equal 2 on top (narrower), equal 3 below */
 .hlh-row-merch {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   width: 78%;
@@ -1124,9 +1123,14 @@ a:hover {
 
 .hlh-row-work {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+  max-width: 720px;
+  margin-inline: auto;
+  width: 100%;
 }
 
-.hlh-card {
+/* Merch product cards (pin + jersey) keep white bordered tiles */
+.hlh-row-merch .hlh-card {
   margin: 0;
   min-width: 0;
   display: flex;
@@ -1154,17 +1158,78 @@ a:hover {
 .hlh-frame img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* full artifact — never crop */
+  object-fit: contain;
   object-position: center center;
   display: block;
   background: #fff;
 }
 
-.hlh-card--todo .hlh-frame {
+/* Instagram story posts → little iPhone frames */
+.hlh-card--phone {
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.hlh-card--phone .phone {
+  width: 100%;
+}
+
+.hlh-card--phone .phone-bezel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 19.5;
+  max-height: 420px;
+  margin-inline: auto;
+  padding: 10px 9px 12px;
+  background: linear-gradient(160deg, #2a2a2a 0%, #111 45%, #1c1c1c 100%);
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 12px 28px rgba(28, 28, 28, 0.18);
+  box-sizing: border-box;
+}
+
+.hlh-card--phone .phone-notch {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38%;
+  height: 11px;
+  background: #0a0a0a;
+  border-radius: 999px;
+  z-index: 2;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.hlh-card--phone .phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f7f4ef;
+}
+
+.hlh-card--phone .phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
   background: #fff;
 }
 
-.hlh-card figcaption {
+.hlh-card figcaption,
+.hlh-card--phone figcaption {
   margin: 0.55rem 0 0.15rem;
   font-family: var(--serif);
   font-size: clamp(0.85rem, 1.4vw, 1rem);
@@ -1181,5 +1246,9 @@ a:hover {
     max-width: 320px;
     margin-inline: auto;
     width: 100%;
+  }
+
+  .hlh-card--phone {
+    max-width: 220px;
   }
 }
