@@ -995,6 +995,9 @@ a:hover {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(0.75rem, 2vw, 1.15rem);
   align-items: stretch;
+  width: 78%;
+  max-width: 640px;
+  margin-inline: auto;
 }
 
 .vs-board-five .vs-row-mid {
@@ -1049,4 +1052,12 @@ a:hover {
     margin-inline: auto;
     width: 100%;
   }
+}
+
+.vs-board-five .vs-row-top .vs-reel video,
+.vs-board-five .vs-row-top .vs-frame img {
+  aspect-ratio: 3 / 4;
+  max-height: 340px;
+  width: 100%;
+  margin-inline: auto;
 }
