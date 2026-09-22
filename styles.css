@@ -520,10 +520,14 @@ a:hover {
 .charity-visual img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* full artifact, equal frame */
+  object-fit: cover; /* fill equal frame — no letterbox bars */
   object-position: center center;
   display: block;
-  background: #fff;
+  background: #111;
+}
+
+.noz-video .media-frame {
+  background: #111;
 }
 
 .noz-video figcaption,
