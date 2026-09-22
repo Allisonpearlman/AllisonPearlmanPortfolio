@@ -1459,6 +1459,22 @@ a:hover {
   gap: 0.75rem 0.9rem;
 }
 
+.closet-extra__mannequin {
+  grid-column: 1 / -1;
+}
+
+.closet-extra__mannequin img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  width: 100%;
+}
+
+.closet-extra .ba-card:not(.closet-extra__mannequin) img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
 .closet-extra .ba-card figcaption {
   margin-top: 0.45rem;
   font-family: var(--serif);
