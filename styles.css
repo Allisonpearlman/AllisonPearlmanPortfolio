@@ -548,7 +548,7 @@ a:hover {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--media-gap);
   align-items: stretch;
-  max-width: var(--media-board);
+  max-width: 940px;
   margin: 0 auto 1.35rem;
 }
 
@@ -575,7 +575,7 @@ a:hover {
 .edit-card img {
   width: 100%;
   height: auto;
-  max-height: var(--media-tile-h);
+  max-height: 380px;
   aspect-ratio: 3 / 4;
   object-fit: contain; /* full board — never crop */
   object-position: center center;
@@ -597,7 +597,7 @@ a:hover {
 }
 
 .wl-collections {
-  max-width: var(--media-board);
+  max-width: 980px;
   margin: 0 auto;
 }
 
@@ -1139,41 +1139,28 @@ a:hover {
 }
 
 .hlh-frame {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   aspect-ratio: 3 / 4;
   max-height: var(--media-tile-h);
   overflow: hidden;
-  background: #ece7df;
+  background: #fff;
   border-radius: 1px;
+  box-shadow: inset 0 0 0 1px rgba(28, 28, 28, 0.06);
 }
 
 .hlh-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* full artifact — never crop */
   object-position: center center;
   display: block;
-  background: #ece7df;
-}
-
-/* Merch mockups: keep full product in frame without changing tile size */
-.hlh-frame--pin img,
-.hlh-frame--jersey img {
-  object-fit: contain;
-  object-position: center;
   background: #fff;
 }
 
-/* Light social graphic needs a hairline so cream paper reads on cream page */
 .hlh-card--todo .hlh-frame {
-  background: #fff;
-  box-shadow: inset 0 0 0 1px rgba(28, 28, 28, 0.08);
-}
-
-.hlh-card--todo .hlh-frame img {
-  object-fit: contain;
-  object-position: center;
   background: #fff;
 }
 
