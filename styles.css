@@ -611,24 +611,6 @@ a:hover {
   line-height: 1.2;
 }
 
-.edits-grid-full {
-  max-width: 920px;
-  margin-bottom: 0.85rem;
-}
-
-.edits-grid-full .edit-card img {
-  max-height: calc(var(--media-tile-h) * 0.92);
-}
-
-.wl-collections-note {
-  max-width: 920px;
-  margin: 0.35rem auto 0;
-  text-align: center;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-}
-
 .wl-collections {
   max-width: 860px;
   margin: 0 auto;
