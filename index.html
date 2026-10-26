@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=polish5" />
+  <link rel="stylesheet" href="styles.css?v=marquee1" />
   <!-- build-stamp: v5-fill -->
 </head>
 <body>
@@ -104,11 +104,9 @@
         </div>
 
         <p class="featured-label">Collection boards</p>
-        <div class="edits-scroller" data-edits-scroller>
-          <button type="button" class="edits-nav edits-nav-prev" aria-label="Previous boards" hidden>
-            <span aria-hidden="true">‹</span>
-          </button>
-          <div class="edits-track" tabindex="0" aria-label="Scroll WantLocker collection boards">
+        <div class="edits-scroller" data-edits-marquee aria-label="WantLocker collection boards slowly scrolling">
+          <div class="edits-track">
+            <div class="edits-set">
           <figure class="edit-card" data-lightbox="assets/images/board-game-day.png" tabindex="0" role="button" aria-label="View Game Day board larger">
             <img
               src="assets/images/board-game-day.png"
@@ -179,12 +177,82 @@
             />
             <figcaption>Holiday Gift</figcaption>
           </figure>
+            </div>
+            <div class="edits-set" aria-hidden="true">
+          <figure class="edit-card" data-lightbox-dup="assets/images/board-game-day.png" aria-label="View Game Day board larger">
+            <img
+              src="assets/images/board-game-day.png"
+              alt="The Game Day Edit — ready to rep"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Game Day</figcaption>
+          </figure>
+          <figure class="edit-card" data-lightbox-dup="assets/images/board-class.png" aria-label="View Class board larger">
+            <img
+              src="assets/images/board-class.png"
+              alt="The Class Edit — your daily uniform"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Class</figcaption>
+          </figure>
+          <figure class="edit-card" data-lightbox-dup="assets/images/board-poolside.png" aria-label="View Poolside board larger">
+            <img
+              src="assets/images/board-poolside.png"
+              alt="The Poolside Edit — see you at the pool"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Poolside</figcaption>
+          </figure>
+          <figure class="edit-card" data-lightbox-dup="assets/images/board-active.png" aria-label="View Active board larger">
+            <img
+              src="assets/images/board-active.png"
+              alt="The Active Edit — Locker collection board"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Active</figcaption>
+          </figure>
+          <figure class="edit-card" data-lightbox-dup="assets/images/board-night-out.png" aria-label="View Night Out board larger">
+            <img
+              src="assets/images/board-night-out.png"
+              alt="The Night Out Edit — Locker collection board"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Night Out</figcaption>
+          </figure>
+          <figure class="edit-card" data-lightbox-dup="assets/images/board-lounge.png" aria-label="View Lounge board larger">
+            <img
+              src="assets/images/board-lounge.png"
+              alt="The Lounge Edit — Locker collection board"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Lounge</figcaption>
+          </figure>
+          <figure class="edit-card" data-lightbox-dup="assets/images/board-holiday-gift.png" aria-label="View Holiday Gift board larger">
+            <img
+              src="assets/images/board-holiday-gift.png"
+              alt="The Holiday Gift Edit — Locker collection board"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Holiday Gift</figcaption>
+          </figure>
+            </div>
           </div>
-          <button type="button" class="edits-nav edits-nav-next" aria-label="Next boards">
-            <span aria-hidden="true">›</span>
-          </button>
         </div>
-        <p class="edits-hint">Scroll or use the arrows to see all edits</p>
+        <p class="edits-hint">Hover to pause · click a board to zoom</p>
 
         <figure class="media-block wl-collections">
           <img
@@ -569,6 +637,6 @@
 
   <a class="sticky-email" href="mailto:allisonrpearlman@gmail.com">Email me</a>
 
-  <script src="script.js?v=polish2"></script>
+  <script src="script.js?v=marquee1"></script>
 </body>
 </html>

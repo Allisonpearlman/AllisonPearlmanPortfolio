@@ -83,36 +83,17 @@
   });
 
 
-  /* WantLocker edits horizontal scroller */
-  document.querySelectorAll("[data-edits-scroller]").forEach((root) => {
+  /* WantLocker edits marquee: pause on touch so lightbox still works */
+  document.querySelectorAll("[data-edits-marquee]").forEach((root) => {
     const track = root.querySelector(".edits-track");
-    const prev = root.querySelector(".edits-nav-prev");
-    const next = root.querySelector(".edits-nav-next");
-    if (!track || !prev || !next) return;
-
-    const cardStep = () => {
-      const card = track.querySelector(".edit-card");
-      if (!card) return 240;
-      const styles = getComputedStyle(track);
-      const gap = parseFloat(styles.columnGap || styles.gap) || 16;
-      return card.getBoundingClientRect().width + gap;
+    if (!track) return;
+    const pause = () => { track.style.animationPlayState = "paused"; };
+    const play = () => {
+      if (root.matches(":hover") || root.matches(":focus-within")) return;
+      track.style.animationPlayState = "";
     };
-
-    const syncNav = () => {
-      const max = track.scrollWidth - track.clientWidth - 2;
-      prev.hidden = track.scrollLeft <= 2;
-      next.hidden = track.scrollLeft >= max;
-    };
-
-    prev.addEventListener("click", () => {
-      track.scrollBy({ left: -cardStep(), behavior: "smooth" });
-    });
-    next.addEventListener("click", () => {
-      track.scrollBy({ left: cardStep(), behavior: "smooth" });
-    });
-    track.addEventListener("scroll", syncNav, { passive: true });
-    window.addEventListener("resize", syncNav);
-    syncNav();
+    root.addEventListener("touchstart", pause, { passive: true });
+    root.addEventListener("touchend", () => setTimeout(play, 1200), { passive: true });
   });
 
   /* WantLocker board lightbox */

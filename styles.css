@@ -560,40 +560,65 @@ a:hover {
 
 .edits-scroller {
   position: relative;
-  max-width: 920px;
-  margin: 0 auto 0.45rem;
+  max-width: none;
+  width: 100%;
+  margin: 0 0 0.45rem;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
 }
 
 .edits-track {
   display: flex;
+  width: max-content;
+  gap: 0;
+  padding: 0.35rem 0 0.85rem;
+  animation: edits-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.edits-scroller:hover .edits-track,
+.edits-scroller:focus-within .edits-track {
+  animation-play-state: paused;
+}
+
+.edits-set {
+  display: flex;
   gap: var(--media-gap);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  padding: 0.35rem 0.15rem 0.85rem;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(28, 28, 28, 0.25) transparent;
+  padding-right: var(--media-gap);
+  flex-shrink: 0;
 }
 
-.edits-track:focus-visible {
-  outline: 2px solid rgba(28, 28, 28, 0.25);
-  outline-offset: 4px;
-  border-radius: 4px;
+@keyframes edits-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-.edits-track::-webkit-scrollbar {
-  height: 6px;
-}
+@media (prefers-reduced-motion: reduce) {
+  .edits-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 920px;
+    margin-inline: auto;
+    justify-content: center;
+  }
 
-.edits-track::-webkit-scrollbar-thumb {
-  background: rgba(28, 28, 28, 0.22);
-  border-radius: 999px;
+  .edits-set[aria-hidden="true"] {
+    display: none;
+  }
+
+  .edits-scroller {
+    mask-image: none;
+    -webkit-mask-image: none;
+    overflow: visible;
+  }
 }
 
 .edit-card {
   margin: 0;
-  flex: 0 0 min(42%, 220px);
+  flex: 0 0 200px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -603,7 +628,6 @@ a:hover {
   box-shadow: 0 1px 0 rgba(28, 28, 28, 0.05);
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
   cursor: zoom-in;
-  scroll-snap-align: start;
 }
 
 .edit-card:hover,
@@ -851,22 +875,23 @@ a:hover {
   }
 
   .edits-scroller {
-    max-width: none;
     margin-inline: calc(var(--pad) * -1);
+    width: calc(100% + 2 * var(--pad));
   }
 
   .edits-track {
-    gap: 0.85rem;
-    padding-inline: var(--pad);
+    animation-duration: 42s;
     padding-bottom: 0.5rem;
   }
 
-  .edit-card {
-    flex: 0 0 min(70vw, 250px);
+  .edits-set {
+    gap: 0.85rem;
+    padding-right: 0.85rem;
   }
 
-  .edits-nav {
-    display: none;
+  .edit-card {
+    flex: 0 0 160px;
+    width: 160px;
   }
 
   .edits-hint {
