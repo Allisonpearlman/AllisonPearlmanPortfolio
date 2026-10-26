@@ -104,7 +104,11 @@
         </div>
 
         <p class="featured-label">Collection boards</p>
-        <div class="edits-grid" aria-label="WantLocker collection boards">
+        <div class="edits-scroller" data-edits-scroller>
+          <button type="button" class="edits-nav edits-nav-prev" aria-label="Previous boards" hidden>
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div class="edits-track" tabindex="0" aria-label="Scroll WantLocker collection boards">
           <figure class="edit-card" data-lightbox="assets/images/board-game-day.png" tabindex="0" role="button" aria-label="View Game Day board larger">
             <img
               src="assets/images/board-game-day.png"
@@ -135,7 +139,52 @@
             />
             <figcaption>Poolside</figcaption>
           </figure>
+          <figure class="edit-card" data-lightbox="assets/images/board-active.png" tabindex="0" role="button" aria-label="View Active board larger">
+            <img
+              src="assets/images/board-active.png"
+              alt="The Active Edit — Locker collection board"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Active</figcaption>
+          </figure>
+          <figure class="edit-card" data-lightbox="assets/images/board-night-out.png" tabindex="0" role="button" aria-label="View Night Out board larger">
+            <img
+              src="assets/images/board-night-out.png"
+              alt="The Night Out Edit — Locker collection board"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Night Out</figcaption>
+          </figure>
+          <figure class="edit-card" data-lightbox="assets/images/board-lounge.png" tabindex="0" role="button" aria-label="View Lounge board larger">
+            <img
+              src="assets/images/board-lounge.png"
+              alt="The Lounge Edit — Locker collection board"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Lounge</figcaption>
+          </figure>
+          <figure class="edit-card" data-lightbox="assets/images/board-holiday-gift.png" tabindex="0" role="button" aria-label="View Holiday Gift board larger">
+            <img
+              src="assets/images/board-holiday-gift.png"
+              alt="The Holiday Gift Edit — Locker collection board"
+              loading="lazy"
+              width="960"
+              height="1280"
+            />
+            <figcaption>Holiday Gift</figcaption>
+          </figure>
+          </div>
+          <button type="button" class="edits-nav edits-nav-next" aria-label="Next boards">
+            <span aria-hidden="true">›</span>
+          </button>
         </div>
+        <p class="edits-hint">Scroll or use the arrows to see all edits</p>
 
         <figure class="media-block wl-collections">
           <img
